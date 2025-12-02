@@ -2,17 +2,17 @@ import express from "express";
 import type { Application } from "express";
 import cors from "cors";
 import "dotenv/config";
-// import mainRouter from "./routes/mainRouter.js";
 
-import notFoundHandler from "./middlewares/notFoundHandler.js"; 
+import notFoundHandler from "./middlewares/notFoundHandler.js";
+import authRouter from "./routes/auth.router.js";
 
-const startServer = ():void => {
+const startServer = (): void => {
   const app: Application = express();
 
   app.use(cors());
   app.use(express.json());
 
-  // app.use("/", mainRouter);
+  app.use("/api/auth", authRouter);
 
   app.use(notFoundHandler);
 
@@ -21,6 +21,3 @@ const startServer = ():void => {
 };
 
 export default startServer;
-
-
-
