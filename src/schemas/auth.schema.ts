@@ -7,7 +7,7 @@ import {
 } from "../constants/auth.constants.js";
 
 export const registerSchema = z.object({
-  email: z.string().trim().min(1).regex(emailRegex),
+  email: z.string().trim().min(1, "Email must contain @, and not contain spaces").regex(emailRegex),
   password: z
     .string()
     .trim()
@@ -25,7 +25,7 @@ export const loginSchema = z.object({
     .string()
     .min(3, "username must be at least 3 characters")
     .max(20, "username must be at least 3 characters")
-    .regex(usernameRegex)
+    .regex(usernameRegex),
 
   password: z
     .string()

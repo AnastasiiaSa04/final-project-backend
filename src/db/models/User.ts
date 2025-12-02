@@ -38,12 +38,12 @@ const userSchema = new Schema<UserDocument>(
     },
     accessToken: {
       type: String,
-      required: true,
+      required: false,
       default: null,
     },
     refreshToken: {
       type: String,
-      required: true,
+      required: false,
       default: null,
     },
     verify: {
