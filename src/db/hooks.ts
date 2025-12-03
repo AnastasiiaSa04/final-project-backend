@@ -17,7 +17,7 @@ export const handleSaveError = (
     error.status = 409;
   }
 
-  // next(error);
+  next(error);
 };
 
 export const setUpdateSettings = function (next: MongooseNext) {
