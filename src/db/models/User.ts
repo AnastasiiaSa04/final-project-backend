@@ -55,6 +55,7 @@ const userSchema = new Schema<UserDocument>(
 );
 
 userSchema.post("save", handleSaveError);
+//@ts-expect-error
 userSchema.pre("findOneAndUpdate", setUpdateSettings);
 userSchema.post("findOneAndUpdate", handleSaveError);
 

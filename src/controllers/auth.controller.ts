@@ -6,6 +6,7 @@ import { registerSchema } from "../schemas/auth.schema.js";
 
 export const registerController = async (req: Request, res: Response) => {
   try {
+    //@ts-expect-error
     validateBody(registerSchema, req.body);
 
     const { email, username, fullname, password } = req.body;
